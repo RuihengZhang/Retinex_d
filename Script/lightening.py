@@ -80,11 +80,11 @@ def post_exper(img_name):  # img_name: 612.png
     save_img(enh_img, 'post_gamma.png')       #### 这个地方一定要改 ####
 
     # 下面开始计算
-    psnr = max(Metrics().psnr(deg, enh_img), Metrics().psnr(ori, enh_img))
-    ssim = max(Metrics().ssim(ori, enh_img), Metrics().ssim(deg, enh_img))
-    ig = max(Metrics().ig(deg, enh_img), Metrics().ig(ori, enh_img))
-    dpi = max(Metrics().dpi(deg, enh_img), Metrics().dpi(ori, enh_img))
-    vif = max(Metrics().vif(ori, enh_img), Metrics().vif(deg, enh_img))
+    psnr = Metrics().psnr(deg, enh_img), Metrics().psnr(ori, enh_img)
+    ssim = Metrics().ssim(ori, enh_img), Metrics().ssim(deg, enh_img)
+    ig = Metrics().ig(deg, enh_img), Metrics().ig(ori, enh_img)
+    dpi = Metrics().dpi(deg, enh_img), Metrics().dpi(ori, enh_img)
+    vif = Metrics().vif(ori, enh_img), Metrics().vif(deg, enh_img)
 
     print(f'psnr:{psnr.item():.2f}, ssim:{ssim.item():.2f}, ig:{ig.item():.2f}, dpi:{dpi.item():.2f}, vif:{vif.item():.2f}')
 
@@ -99,11 +99,11 @@ def pre_exper(img_name):  # img_name: 612.png
     save_img(enh_img, 'pre_gamma.png')   #### 这个地方一定要改  ### 
 
     # 下面开始计算
-    psnr = min(Metrics().psnr(deg, enh_img), Metrics().psnr(ori, enh_img))
-    ssim = min(Metrics().ssim(ori, enh_img), Metrics().ssim(deg, enh_img))
-    ig = min(Metrics().ig(deg, enh_img), Metrics().ig(ori, enh_img))
-    dpi = min(Metrics().dpi(deg, enh_img), Metrics().dpi(ori, enh_img))
-    vif = min(Metrics().vif(ori, enh_img), Metrics().vif(deg, enh_img))
+    psnr = Metrics().psnr(deg, enh_img), Metrics().psnr(ori, enh_img)
+    ssim = Metrics().ssim(ori, enh_img), Metrics().ssim(deg, enh_img)
+    ig = Metrics().ig(deg, enh_img), Metrics().ig(ori, enh_img)
+    dpi = Metrics().dpi(deg, enh_img), Metrics().dpi(ori, enh_img)
+    vif = Metrics().vif(ori, enh_img), Metrics().vif(deg, enh_img)
 
     print(f'psnr:{psnr.item():.2f}, ssim:{ssim.item():.2f}, ig:{ig.item():.2f}, dpi:{dpi.item():.2f}, vif:{vif.item():.2f}')
 
